@@ -1,0 +1,244 @@
+#hero {
+    height: 90svh;
+    max-width: 1600px;
+    margin: auto;
+    margin-top: 4rem;
+    background: linear-gradient(to top right, #ff2115 30%, #fe7b7b);
+    border-radius: 0% 0% 30% 75%;
+  }
+  
+  .heroContent {
+    position: relative;
+    top: 4.5rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 5rem;
+  }
+  
+  .heroContent img {
+    width: 80%;
+    max-width: 45rem;
+  }
+  
+  .heroContent h1 {
+    font-size: 50px;
+    position: relative;
+  }
+  
+  .bottomLine {
+    padding: 0.4rem 0.5rem;
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  @media (max-width: 960px) {
+    .heroContent {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 650px) {
+    #hero {
+      background: linear-gradient(to top right, #ff3025, #ff7b7b);
+    }
+  
+    .heroContent {
+      flex-direction: column;
+      padding: 3rem 1rem;
+      top: 0;
+    }
+  
+    #hero {
+      top: 3rem;
+      border-radius: 0% 0% 0% 100%;
+    }
+  
+    .heroContent img {
+      width: 100%;
+      max-width: 45rem;
+    }
+  
+    .heroContent h1 {
+      font-size: 45px;
+      margin-bottom: 0.5rem;
+    }
+  
+    .text-white {
+      color: #000000;
+    }
+  
+    .bottomLine {
+      display: none;
+    }
+  }
+  
+  /* cards css starts */
+  
+  #cards-section {
+    margin-top: 10rem;
+    padding: 6rem;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .card {
+    width: 250px;
+    position: relative;
+    height: 300px;
+    cursor: pointer;
+    border-radius: 24px 24px 0 0;
+    overflow: hidden;
+    border: 2px solid black;
+  }
+  
+  .span {
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    background-color: #00000078;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s;
+  }
+  
+  .card:hover .span {
+    height: 100%;
+  }
+  
+  .images {
+    position: relative;
+    top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  @media (max-width: 650px) {
+    .card {
+      width: 200px;
+      height: 250px;
+    }
+  }
+  
+  /* eligibility css */
+  .eligible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    width: 80%;
+    margin: 10rem auto;
+    padding: 1rem 0.3rem;
+  }
+  
+  #info-eligible h2 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  
+  #info-eligible {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+  
+  #info-eligible ul {
+    font-size: 20px;
+  }
+  
+  .img {
+    width: 100%;
+  }
+  
+  @media (max-width: 650px) {
+    .eligible {
+      flex-direction: column;
+    }
+    #info-eligible h2{
+      font-size: 30px;
+    }
+  }
+  
+  /* footer css */
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    position: relative;
+    background-image: linear-gradient(to right, #fa7c7c, #f83434);
+    max-width: 1600px;
+    margin: auto;
+  }
+  
+  #footer-cross {
+    max-width: 1600px;
+    margin: auto;
+    position: relative;
+    margin-top: 5rem;
+  }
+  
+  #footer-cross::before {
+    background-image: linear-gradient(to right, #fa7c7c, #f83434);
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -40px;
+    height: 80px;
+    z-index: -1;
+    transform: skewY(-3deg);
+    max-width: 1600px;
+    margin: auto;
+  }
+  
+  #from-us-footer {
+    width: 20rem;
+    background-color: #d9d9d9;
+    padding: 1rem;
+    border-radius: 50px 0 50px 0;
+    text-align: center;
+  }
+  
+  #from-us-footer h3 {
+    color: red;
+    font-size: 30px;
+  }
+  
+  #copyright-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    height: 3rem;
+  }
+  
+  
+  
