@@ -1,0 +1,718 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background-color: rgba(0, 0, 0, 0.27); */
+  box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+nav {
+  padding: 0px 48px;
+  padding-top: 8px;
+  box-shadow: 0px 0px 10px 1px black;
+  width: 100%;
+  background-color: rgba(255, 254, 254, 0.497);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+#navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+}
+
+#logo {
+  height: 56px;
+  object-fit: contain;
+}
+
+.menu-items ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style-type: none;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+/* Hamaburger menu css */
+
+.menu-container {
+  z-index: 999;
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.line {
+  width: 40px;
+  height: 4px;
+  background-color: #000000;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  transform-origin: 50% 50%;
+}
+
+.line-1 {
+  transform: translateY(8px) rotate(39deg);
+}
+
+.line-3 {
+  transform: scale(0);
+}
+
+.line-3 {
+  width: 100%;
+  height: 4px;
+  background-color: #000000;
+}
+
+.line-2 {
+  transform: translateY(-8px) rotate(-39deg);
+}
+
+@media (max-width: 650px) {
+  nav {
+    padding: 0px 30px;
+    padding-top: 8px;
+  }
+  #logo {
+    height: 3rem;
+  }
+  .menu-container {
+    display: flex;
+  }
+  .menu-items {
+    position: absolute;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    top: 4rem;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.897);
+    padding: 1rem;
+    border-radius: 20px 0px 0px 20px;
+    width: 50%;
+    transform: translateY(-130%);
+    transition: all 0.5s ease-in-out;
+  }
+  .menu-items ul {
+    flex-direction: column;
+  }
+  .menu-items ul li {
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .menu-items ul li a {
+    display: block;
+    font-size: 21px;
+  }
+  .menu-items ul li:nth-child(4) {
+    text-align: center;
+  }
+}
+
+.transform {
+  transform: translateY(0%);
+}
+
+/* Emergency button css and animation  */
+.emergencyButton {
+  position: fixed;
+  right: 0;
+  bottom: 4rem;
+  z-index: 100;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 100%;
+  text-align: center;
+  animation: heartbeat 3s infinite alternate;
+  overflow: hidden;
+  border: 2px solid black;
+}
+
+.emergencyButton:hover::before {
+  transform: scale(1);
+}
+
+.emergencyButton a {
+  color: white;
+  text-decoration: none;
+}
+
+.emergencyButton:hover a {
+  color: #000000;
+  z-index: 10;
+}
+
+.emergencyButton::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 100%;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(0.8);
+  }
+  66% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* Emergency button css and animation end */
+#hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  position: relative;
+  left: -2rem;
+  border: 2px solid black;
+  font-size: 20px;
+  background-color: none;
+  margin: 1rem 2rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  transition: box-shadow 0.5s;
+  color: black;
+  overflow: hidden;
+  font-weight: 700;
+}
+
+.btn:nth-child(2) {
+  left: -3rem;
+}
+
+.btn:hover {
+  color: white;
+  z-index: 10;
+}
+
+.btn:hover,
+.btn:active {
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.btn::before {
+  content: "";
+  width: 101%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  transition: all 0.5s;
+  transform-origin: 0;
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+}
+
+/* media query for btns */
+@media (max-width: 650px) {
+  .btn {
+    top: 0;
+    margin-top: 0;
+    padding: 0.7rem 1.7rem;
+  }
+  .btn:nth-child(2) {
+    left: -2rem;
+  }
+}
+
+/* /////////
+CSS OF HEALTH BENEFITS section
+//////// */
+
+.health-benefits-section {
+  margin: 10rem auto;
+  padding: 5rem 0;
+  max-width: 1600px;
+  background-color: whitesmoke;
+}
+
+.health-section-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-area {
+  width: 50%;
+  margin: 0 3rem;
+  padding: 1rem;
+}
+
+.left-area-children {
+  height: 90svh;
+  flex-direction: column;
+  padding: 3rem;
+  text-align: justify;
+  position: relative;
+}
+
+.left-area div h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.left-area div p {
+  font-size: 20px;
+}
+
+.right-area div {
+  position: sticky;
+  top: 20svh;
+}
+
+.right-area h2 {
+  display: block;
+  margin: auto;
+  width: 70%;
+  font-size: 40px;
+  margin-bottom: 2rem;
+}
+
+.img-container {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 3/2;
+  margin: auto;
+  background-image: url("../assets/health-benefits/01.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* media query for health benefits section  */
+
+@media (max-width: 650px) {
+  .health-benefits-section {
+    background-color: white;
+    margin: 4rem auto;
+  }
+
+  .health-section-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .left-area {
+    width: 100%;
+    margin: 0;
+    padding: 0rem;
+  }
+
+  .left-area-children {
+    padding: 7rem 1rem;
+    margin: 0rem 0;
+    height: auto;
+  }
+
+  .left-area div h2 {
+    text-align: start;
+  }
+
+  .left-area-children:nth-child(1):before,
+  .left-area-children:nth-child(3):before,
+  .left-area-children:nth-child(5):before {
+    transform: skewY(-5deg);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: whitesmoke;
+  }
+
+  .left-area-children:nth-child(2):before,
+  .left-area-children:nth-child(4):before {
+    transform: skewY(-5deg);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(254, 76, 56, 0.911) 0%,
+      rgb(255, 130, 130) 100%
+    );
+  }
+
+  .right-area h2 {
+    margin: auto;
+    width: 100%;
+    font-size: 30px;
+    padding: 1rem;
+  }
+
+  .img-container {
+    background-attachment: fixed;
+  }
+}
+
+/* 
+css for registration process steps 
+*/
+
+.registration-process {
+  height: 100svh;
+  position: relative;
+  margin: 10rem 0;
+}
+
+.registration-process::before {
+  transform: skewY(-4deg);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(242, 36, 11, 0.9114496140252977) 0%,
+    rgb(255, 104, 104) 100%
+  );
+}
+
+.div-container {
+  flex-direction: column;
+  max-width: 1200px;
+  padding: 2rem;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgb(255, 255, 255) 80%,
+    rgb(255, 104, 104)
+  );
+  height: 70%;
+}
+
+.div-container h2 {
+  font-weight: 700;
+  font-size: 45px;
+  margin-bottom: 2rem;
+}
+
+.div-container ul {
+  list-style-type: none;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.single-donation-process {
+  background-image: url("../assets/process-icon-bg.png");
+  background-repeat: no-repeat;
+  flex-direction: column;
+  height: 200px;
+  aspect-ratio: 1/1;
+  margin: 1.5rem;
+}
+
+.number {
+  font-size: 40px;
+  font-weight: 600;
+  position: relative;
+  right: 20px;
+}
+
+.title {
+  position: relative;
+  right: 15px;
+  font-size: 20px;
+}
+
+.div-container .hidden:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.div-container .hidden:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.div-container .hidden:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+/* media query for  .registration-process */
+
+@media (max-width: 650px) {
+  .registration-process {
+    height: auto;
+    padding: 4rem 0;
+    margin: 5rem 0;
+  }
+
+  .div-container {
+    margin: 1rem;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .div-container h2 {
+    text-align: center;
+    margin: 0.5rem 0;
+    font-size: 30px;
+  }
+
+  .div-container ul {
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+  }
+
+  .single-donation-process {
+    margin: 0.8rem;
+  }
+}
+
+/* ///
+recovery section css
+//// */
+.recovery-time-section {
+  margin: 10rem 0rem;
+  padding: 5rem 0rem;
+}
+
+.recovery-container {
+  max-width: 1100px;
+  overflow: hidden;
+}
+
+.recovery-left-area {
+  margin: 2rem;
+}
+
+.recovery-left-area h3 {
+  font-size: 40px;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.recovery-left-area p {
+  font-size: 20px;
+}
+
+.recovery-right-area img {
+  height: 400px;
+  aspect-ratio: 1/1;
+}
+
+/* media query css for recovery  section */
+@media (max-width: 650px) {
+  .recovery-time-section {
+    margin: 5rem 0;
+  }
+  .recovery-left-area h3 {
+    font-size: 30px;
+  }
+  .recovery-right-area {
+    display: none;
+  }
+}
+
+/*_________ CSS FOR FIND DONOR PAGE __________ */
+
+.first-section-bd{
+  background: #ff4b42;
+  height: 100svh;
+  position: sticky;
+  top: 0;
+  z-index: -10;
+  overflow: hidden;
+
+  
+  
+}
+.slider-container{
+  max-width: 1600px;
+  margin: auto;
+  height: 80svh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  /* gap: 1rem; */
+  background: white;
+  border-radius: 0% 0% 50% 50%;
+  overflow: hidden;
+
+}
+.columns{
+  width: 150px;
+  margin-inline:0.5rem ;
+  
+}
+.columns:nth-child(1){
+  animation: motionX 56s  infinite backwards alternate;
+}
+.columns:nth-child(2){
+  animation: motionX 40s  infinite backwards alternate;
+}
+.columns:nth-child(3){
+  animation: motionX 34s  infinite backwards alternate;
+}
+.columns:nth-child(4){
+  animation: motionX 50s  infinite backwards alternate;
+}
+.columns:nth-child(5){
+  animation: motionX 45s  infinite backwards alternate;
+}
+.columns:nth-child(6){
+  animation: motionX 33s  infinite backwards alternate;
+}
+.columns:nth-child(7){
+  animation: motionX 44s  infinite backwards alternate;
+}
+.columns:nth-child(8){
+  animation: motionX 69s  infinite backwards alternate;
+}
+.columns:nth-child(9){
+  animation: motionX 90s  infinite backwards alternate;
+}
+
+
+.img-container-bd{
+  height: 200px;
+  /* border: 2px solid black; */
+  margin-top: 1rem;
+  background-image: url('../assets/homepage.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.one .img-container-bd:nth-child(1){
+  background-image: url('../assets/finddonor/1.jpg');
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+.two .img-container-bd:nth-child(1){
+  background-image: url('../assets/finddonor/1.jpg');
+}
+
+
+.userInfo{
+  /* max-width: 1300px; */
+  
+  border: 2px solid red;
+  backdrop-filter: blur(5px);
+  padding: 1.5rem;
+  padding-left: 5rem;
+}
+
+.scroll{
+  position: absolute;
+  top: 90svh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes motionX {
+  0%{
+    transform: translateY(0%);
+  }
+  100%{
+    transform: translateY(-100%);
+
+  }
+}
+@media(max-width:650px){
+  .first-section-bd{
+    display: none;
+  }
+  .userInfo{
+    padding-left: 1rem
+  }
+}
+
+/* COMMON CLASSES */
+.text-white {
+  color: #fff;
+}
+
+.log-in-border {
+  border: 2px solid #000000;
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: all 0.4s ease;
+}
+
+.log-in-border:hover {
+  color: #fff;
+  background-color: #000000;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.taglineHidden {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.heading {
+  overflow: hidden;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 1.5s ease;
+  filter: blur(10px);
+  transform: translateX(-100%);
+}
+
+.rightHidden {
+  opacity: 0;
+  transition: all 1.5s ease;
+  filter: blur(10px);
+  transform: translateX(100%);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0%);
+  transform: translateY(0%);
+}
